@@ -22,8 +22,8 @@ section.hero {
             display: block;
         }
     }
-    p {
-        font-size: 30;
+    a {
+        @extend .cta;
     }
 }
 

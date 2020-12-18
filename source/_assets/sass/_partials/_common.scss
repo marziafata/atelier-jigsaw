@@ -2,9 +2,21 @@ main {
     max-width: 100%;
     margin: 0 auto;
     font-family: 'Lora', serif;
+    font-size: 20px;
 }
 
 
 .height-100 {
     height: 100%;
+}
+
+.cta {
+    height: 50px;
+    width: 165px;
+    text-align: center;
+    background-color: $light-text;
+    margin-top: 20px;
+    color: black;
+    padding: 13px;
+    border-radius: 5px;
 }
