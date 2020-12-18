@@ -12,11 +12,15 @@ main {
 
 .cta {
     height: 50px;
-    width: 165px;
+    width: 185px;
     text-align: center;
-    background-color: $light-text;
+    background-color: $sfondo-beige;
     margin-top: 20px;
-    color: black;
+    color: $testi-marroni;
     padding: 13px;
-    border-radius: 5px;
+    border-radius: 30px;
+}
+
+.altezza-logo {
+    height: 64px;
 }

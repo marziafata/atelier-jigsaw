@@ -7,7 +7,7 @@
             <nav>
                 <ul class="flex">
                     <li class="inline-block pr-10">
-                        <a href="#">Servizi</a>
+                        <a href="#">Creazioni</a>
                     </li>
                     <li class="inline-block pr-10">
                         <a href="#">Contatti</a>

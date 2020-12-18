@@ -3,8 +3,8 @@
 footer {
     background-color: lightgray;
     height: 300px;
-    img {
-        @extend .altezza;
+    img.logo {
+        @extend .altezza-logo;
     }
     div.dati {
         background-color: pink;

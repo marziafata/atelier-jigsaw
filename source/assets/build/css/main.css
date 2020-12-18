@@ -22022,13 +22022,17 @@ main {
 
 .cta, section.hero a {
   height: 50px;
-  width: 165px;
+  width: 185px;
   text-align: center;
-  background-color: white;
+  background-color: bisque;
   margin-top: 20px;
-  color: black;
+  color: saddlebrown;
   padding: 13px;
-  border-radius: 5px;
+  border-radius: 30px;
+}
+
+.altezza-logo, footer img.logo, header img.logo {
+  height: 64px;
 }
 
 section.hero {
@@ -22084,18 +22088,14 @@ section.list-item div.box {
 
 header {
   height: 64px;
-}
-
-header img.altezza, header footer img, footer header img {
-  height: 64px;
+  color: saddlebrown;
+  background-color: bisque;
 }
 
 header {
   height: 64px;
-}
-
-header img.altezza, header footer img, footer header img {
-  height: 64px;
+  color: saddlebrown;
+  background-color: bisque;
 }
 
 footer {

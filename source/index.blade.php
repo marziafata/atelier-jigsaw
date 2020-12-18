@@ -14,7 +14,7 @@
                 <p>Scegli l'abito più bello, su misura per te.</p>
                 <div class="buttons flex">
                     <a href="#">Appuntamenti</a>
-                    <a class="ml-5"href="#">Vedi i servizi</a>
+                    <a class="ml-5"href="#">Vedi le creazioni</a>
                 </div>
             </div>
         </div>
