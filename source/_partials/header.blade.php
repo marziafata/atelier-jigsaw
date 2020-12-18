@@ -1,7 +1,7 @@
 <header class="bg-gray-200 col-span-12">
     <div class="header-wrap flex justify-between items-center px-3">
         <div class="img-wrap">
-            <img class="logo" src="assets/images/jigsaw.png" alt="logo">
+            <img class="logo altezza" src="assets/images/jigsaw.png" alt="logo">
         </div>
         <nav>
             <ul class="flex">

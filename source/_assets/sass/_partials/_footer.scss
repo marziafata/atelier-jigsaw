@@ -1,0 +1,23 @@
+@import '_partials/_header.scss';
+
+footer {
+    background-color: lightgray;
+    height: 300px;
+    img {
+        @extend .altezza;
+    }
+    div.dati {
+        background-color: pink;
+        height: 300px;
+        span.indirizzo {
+            display: block;
+        }
+    }
+    div.form {
+        background-color: salmon;
+        height: 300px;
+    }
+    // div.form > input {
+    //     display: block;
+    // }
+}

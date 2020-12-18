@@ -4,17 +4,19 @@
 
 
 @section('body')
-<section class="hero grid grid-cols-12">
-    <div class="col-start-8 col-span-3 flex justify-end items-center ">
-        <div class="text">
-            <h1>Big Hero Test</h1>
-            <p>This is the best app for people with apps</p>
-            <div class="buttons flex">
-                <a href="#">Appuntamenti</a>
-                <a href="#">Vedi i servizi</a>
+<section class="hero">
+    <div class="grid grid-cols-12">
+        <div class="col-start-8 col-span-3 flex justify-end items-center ">
+            <div class="text">
+                <h1>Big Hero Test</h1>
+                <p>This is the best app for people with apps</p>
+                <div class="buttons flex">
+                    <a href="#">Appuntamenti</a>
+                    <a href="#">Vedi i servizi</a>
+                </div>
             </div>
         </div>
-    </div>
+    </div>    
 </section>
 <section class="section-heading">
 <div class="grid grid-cols-12">
