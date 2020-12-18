@@ -1,14 +1,29 @@
 
 section.hero {
-    height: 300px;
-    background-color: pink;
+    height: 500px;
     // padding-right: 100px;
     background-image: url('/assets/images/hero.jpg');
     background-position: center;
-    background-size: contain;
-    background-repeat: repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    div.jumbo {
+        @extend .height-100;
+    }
+    div.text {
+        @extend .height-100;
+        color: $light-text;
+    }
     h1 {
-        font-size: 30px;
+        font-size: 56px;
+        font-family: "Redressed", cursive;
+        line-height: 53px;
+        margin-bottom: 10px;
+        span {
+            display: block;
+        }
+    }
+    p {
+        font-size: 30;
     }
 }
 
