@@ -6,6 +6,19 @@ mix.setPublicPath('source/assets/build');
 
 mix.jigsaw();
 mix.js('source/_assets/js/main.js', 'js');
+// mix.autoload({
+//        jquery: ['$', 'jQuery', 'jquery', 'window.jQuery']
+//    });
+// mix.extract(['jquery']);
+// mix.webpackConfig({
+//     resolve: {
+//         alias: {
+//              'jquery': path.join(__dirname, 'node_modules/jquery/src/jquery')
+//         }
+//     }
+// });
+
+
 mix.sass('source/_assets/sass/main.scss', 'css');
 // .postCss('source/_assets/css/main.css', 'css', [
 //     require('postcss-import'),
@@ -18,4 +31,4 @@ mix.options({
         require('tailwindcss')
     ]
 });
-mix.version();;
+mix.version();

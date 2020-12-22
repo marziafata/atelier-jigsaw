@@ -2,7 +2,7 @@
     <div class="grid grid-cols-12">
         <div class="header-wrap col-span-12 flex justify-between items-center px-3">
             <div class="img-wrap">
-                <img class="logo altezza" src="assets/images/jigsaw.png" alt="logo">
+                <img class="logo altezza" src="assets/images/logo.gif" alt="logo">
             </div>
             <nav>
                 <ul class="flex">
@@ -13,11 +13,7 @@
                         <a href="#">Contatti</a>
                     </li>
                     <li class="inline-block">
-                        <a href="#">
-                            <button type="button" name="button">
-                                Appuntamento
-                            </button>
-                        </a>
+                        <a href="#">Appuntamento</a>
                     </li>
                 </ul>
             </nav>

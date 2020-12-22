@@ -1,23 +1,21 @@
 @import '_partials/_header.scss';
 
 footer {
-    background-color: lightgray;
     height: 300px;
-    img.logo {
-        @extend .altezza-logo;
-    }
+    padding: 20px;
+    background-color: $sfondo-beige;
     div.dati {
-        background-color: pink;
-        height: 300px;
+        img.logo {
+            @extend .altezza-logo;
+        }
+        h2 {
+            @extend .stile-h2;
+        }
         span.indirizzo {
             display: block;
         }
     }
     div.form {
-        background-color: salmon;
-        height: 300px;
+        @extend .height-100;
     }
-    // div.form > input {
-    //     display: block;
-    // }
 }

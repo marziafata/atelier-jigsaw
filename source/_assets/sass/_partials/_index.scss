@@ -1,3 +1,4 @@
+// jumbotrone immaginona
 
 section.hero {
     height: 500px;
@@ -8,6 +9,7 @@ section.hero {
     background-repeat: no-repeat;
     div.jumbo {
         @extend .height-100;
+        @extend .larghezza-sezioni;
     }
     div.text {
         @extend .height-100;
@@ -24,33 +26,61 @@ section.hero {
     }
     a {
         @extend .cta;
+
     }
 }
 
-// /Users/marziafata/Documents/lavoro/prova-jigsaw/source/assets/images/hero.jpg
+// sezione immagine + testo
 
 section.section-heading {
-    height: 300px;
-    background-color: lightblue;
-    div.img {
-        height: 300px;
-        background-color: grey;
-    }
-    div.testo {
-        height: 300px;
-        background-color: blue;
+    // height: 500px;
+    padding: 50px 0;
+    div.wrap {
+        @extend .larghezza-sezioni;
+        div.img-wrap {
+            @extend .height-100;
+            img {
+                object-fit: cover;
+            }
+        }
+        div.testo-wrap {
+            @extend .height-100;
+            padding: 25px;
+            h2 {
+                @extend .stile-h2;
+            }
+            p {
+                margin-top: 20px;
+            }
+            p:last-child {
+                font-size: 16px;
+                i {
+                    margin-left: 10px;
+                }
+            }
+        }
     }
 }
 
+// grid section titolo
 section.grid-section{
-    background-color: rosybrown;
-    height: 50px;
+    // height: 100px;
+    div.wrap {
+        @extend .larghezza-sezioni;
+        @extend .height-100;
+        h2 {
+            @extend .stile-h2;
+        }
+    }
 }
 
 section.list-item {
-    background-color: burlywood;
-    div.box {
-        height: 100px;
+    padding: 50px 0;
+    div.wrap {
+        @extend .larghezza-sezioni;
+        div.box2 {
+            margin-top: 45px;
 
+        }
     }
 }
