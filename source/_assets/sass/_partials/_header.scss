@@ -1,10 +1,57 @@
 header {
-    // height: 64px;
-    color: $testi-marroni;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    transition: 0.6s;
+    display: none;
+    color: $testi-bianchi;
     font-weight: bold;
-    background-color: $sfondo-beige;
     img.logo {
         @extend .altezza-logo;
-        margin: 10px 0;
+        // width: 30%;
+        line-height: 64px;
+        // margin: 10px 0;
+        position: relative;
+        transition: 0.6s;
+    }
+    ul {
+        // width: 70%;
+        // line-height: 64px;
+        position: relative;
+        li {
+            position: relative;
+            transition: 0.6s;
+            &.appuntamento {
+                @extend .cta-full;
+                height: 40px;
+                width: 150px;
+                line-height: 40px;
+            }
+            a {
+                position: relative;
+                transition: 0.6s;
+                &.voce {
+                    padding-bottom: 7px;
+                    &.voce:hover {
+                        border-bottom: 3px solid $colore-chiaro;
+                    }
+                }
+            }            
+        }
+    }
+}
+div.menu-mobile {
+    width: 100%;
+    position: fixed;
+    img.logo {
+        height: 50px;
+    }
+    i.fa-bars {
+        // position: fixed;
+        // top: 10px;
+        // right: 10px;
+        color: $colore-chiaro;
     }
 }

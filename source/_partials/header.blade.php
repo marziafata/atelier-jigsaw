@@ -1,23 +1,24 @@
 <header class="">
-    <div class="grid grid-cols-12">
-        <div class="header-wrap col-span-12 flex justify-between items-center px-3">
-            <div class="img-wrap">
-                <img class="logo altezza" src="assets/images/logo.gif" alt="logo">
-            </div>
-            <nav>
-                <ul class="flex">
-                    <li class="inline-block pr-10">
-                        <a href="#">Creazioni</a>
-                    </li>
-                    <li class="inline-block pr-10">
-                        <a href="#">Contatti</a>
-                    </li>
-                    <li class="inline-block">
-                        <a href="#">Appuntamento</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+    <div class="img-wrap">
+        <img class="logo altezza" src="assets/images/logo.gif" alt="logo">
     </div>
-
+    <nav>
+        <ul class="menu flex justify-center items-center">
+            <li class="inline-block pr-10">
+                <a class="voce" href="#">Creazioni</a>
+            </li>
+            <li class="inline-block pr-10">
+                <a class="voce" href="#">Contatti</a>
+            </li>
+            <li class="inline-block appuntamento">
+                <a href="#">Appuntamento</a>
+            </li>
+        </ul>
+    </nav>
 </header>
+<div class="menu-mobile flex justify-between p-5 items-center">
+    <div class="img-wrap">
+        <img class="logo" src="assets/images/logo.gif" alt="logo">
+    </div>
+    <i class="fas fa-2x fa-bars"></i>
+</div>

@@ -1,0 +1,72 @@
+
+@media screen and (min-width: 1024px) {
+
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &.nascondi {
+            padding: 5px 100px;
+            background: black;
+        }
+    }
+
+    div.menu-mobile {
+        display: none;
+    }
+
+    .larghezza-sezioni {
+        max-width: 1440px;
+    }
+
+    section.hero {
+    background-image: url(/assets/images/hero.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 250px 0;
+    }
+
+    section.section-heading {
+        padding: 200px;
+        div.wrap div:nth-child(2) div.testo-wrap {
+            padding-top: 0;
+            p {
+                margin-top: 30px;
+            }
+            p:last-child {
+                font-size: 16px;
+            }
+        }
+    }
+
+    section.list-item {
+        padding: 100px 0 200px 0;
+        div.wrap div.box:nth-child(2), div.wrap div.box:nth-child(3) {
+            margin-top: 0;
+        }
+        div.wrap div.box.box2 {
+            margin-top: 100px;
+        }
+    }
+
+    footer {
+        div.wrap div.dati {
+            border-right: 1px solid #d1c8b0;
+            p.contatti {
+                font-size: 48px;
+                }
+            }
+        div.wrap div:nth-child(2) {
+            div.form p.contatti {
+                font-size: 48px;
+                margin-top: 0;
+            }
+        }
+    }
+
+    footer div.wrap div.dati div {
+        margin-top: 20px;
+    }
+}

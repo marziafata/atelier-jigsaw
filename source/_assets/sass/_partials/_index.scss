@@ -1,12 +1,16 @@
 // jumbotrone immaginona
 
 section.hero {
-    height: 500px;
+    // height: 750px;
     // padding-right: 100px;
+    height: 100vh;
+    max-height: 1440px;
     background-image: url('/assets/images/hero.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    padding: 25px 0;
+    // overflow: hidden;
     div.jumbo {
         @extend .height-100;
         @extend .larghezza-sezioni;
@@ -14,20 +18,28 @@ section.hero {
     div.text {
         @extend .height-100;
         color: $testi-bianchi;
-    }
-    h1 {
-        font-size: 56px;
-        font-family: "Redressed", cursive;
-        line-height: 53px;
-        margin-bottom: 10px;
-        span {
-            display: block;
+        h1 {
+            font-size: 56px;
+            font-family: "Redressed", cursive;
+            line-height: 53px;
+            margin-bottom: 10px;
+            span {
+                display: block;
+            }
+        }
+        div.buttons {
+            a:first-child {
+                @extend .cta-light;
+                @extend .proprieta-cta-hero;
+
+            }
+            a:last-child {
+                @extend .cta-full;
+                @extend .proprieta-cta-hero;
+            }
         }
     }
-    a {
-        @extend .cta;
 
-    }
 }
 
 // sezione immagine + testo
@@ -35,17 +47,20 @@ section.hero {
 section.section-heading {
     // height: 500px;
     padding: 50px 0;
+    background-color: $colore-scuro;
     div.wrap {
         @extend .larghezza-sezioni;
         div.img-wrap {
             @extend .height-100;
             img {
                 object-fit: cover;
+                height: 350px;
             }
         }
         div.testo-wrap {
             @extend .height-100;
-            padding: 25px;
+            color: $testi-bianchi;
+            padding-top: 50px;
             h2 {
                 @extend .stile-h2;
             }
@@ -53,7 +68,8 @@ section.section-heading {
                 margin-top: 20px;
             }
             p:last-child {
-                font-size: 16px;
+                font-size: 20px;
+                color: $colore-chiaro;
                 i {
                     margin-left: 10px;
                 }
@@ -65,21 +81,38 @@ section.section-heading {
 // grid section titolo
 section.grid-section{
     // height: 100px;
+    background-color: $colore-scuro;
+    color: $testi-bianchi;
     div.wrap {
         @extend .larghezza-sezioni;
         @extend .height-100;
         h2 {
             @extend .stile-h2;
         }
+        p {
+            margin-top: 50px;
+        }
     }
 }
 
 section.list-item {
     padding: 50px 0;
+    background-color: $colore-scuro;
+    color: $testi-bianchi;
     div.wrap {
         @extend .larghezza-sezioni;
-        div.box2 {
-            margin-top: 45px;
+        .box {
+            &:not(:first-child) {
+                margin-top: 50px;
+            }
+            i {
+                background-color: grey;
+                font-size: 100px;
+            }
+            h3 {
+                font-size: 30px;
+                font-weight: bold;
+            }
 
         }
     }

@@ -1,21 +1,79 @@
 @import '_partials/_header.scss';
 
 footer {
-    height: 300px;
-    padding: 20px;
-    background-color: $sfondo-beige;
-    div.dati {
-        img.logo {
-            @extend .altezza-logo;
+    // height: 500px;
+    padding: 100px 0 20px 0;
+    background-color: $colore-medio;
+    color: $colore-chiaro;
+    div.wrap {
+        @extend .larghezza-sezioni;
+        height: 90%;
+        div.dati {
+
+            img.logo {
+                @extend .altezza-logo;
+            }
+            div {
+                margin-top: 50px;
+            }
+            // p.contatti {
+            //     color: $colore-chiaro;
+            //     font-size: 50px;
+            //     font-weight: bold;
+            // }
+            .fa-map-marker-alt {
+                font-size: 22px;
+            }
+            .indirizzo {
+                display: block;
+                font-size: 25px;
+            }
+            .wrap-telefono {
+                width: 100%;
+            }
         }
-        h2 {
-            @extend .stile-h2;
-        }
-        span.indirizzo {
-            display: block;
+        div.form {
+            width: 100%;
+            p {
+                margin: 50px 0;
+            }
+            input {
+                width: 100%;
+                font-size: 23px;
+                background-color: $colore-medio;
+                border-bottom: 1px solid $colore-chiaro;
+                &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+                    color: $colore-chiaro;
+                    opacity: 1; /* Firefox */
+                }
+                &.flatpickr-input {
+                    margin-bottom: 50px;
+                }
+                &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                    color: $colore-chiaro;
+                }
+
+                &::-ms-input-placeholder { /* Microsoft Edge */
+                    color: $colore-chiaro;
+                }
+                &:focus{
+                outline: none;
+                }
+            }
+            button {
+                @extend .cta-light;
+                padding: 10px;
+                font-size: 25px;
+            }
         }
     }
-    div.form {
-        @extend .height-100;
+    div.small-wrap {
+        padding-top: 47px;
+        color: $colore-scuro;
+    }
+    i.ago {
+        height: 20px;
+        display: inline-block;
+        // color: $colore-chiaro;
     }
 }

@@ -9,33 +9,55 @@ main {
 }
 
 .larghezza-sezioni {
-    max-width: 1440px;
+    max-width: 100%;
     margin: auto;
 }
 
 .stile-h2 {
-    font-size: 25px;
+    font-size: 40px;
     font-weight: bold;
+    color: $colore-chiaro;
 }
 
 .height-100 {
     height: 100%;
 }
 
-.cta {
-    height: 50px;
-    width: 185px;
+.cta-full {
+    @extend .proprieta-cta;
+    background-color: $colore-chiaro;
+    color: $colore-scuro;
+}
+.cta-light {
+    @extend .proprieta-cta;
+    color: $colore-chiaro;
+    border: 1px solid $colore-chiaro;
+}
+
+.proprieta-cta {
+    // height: 50px;
+    // width: 185px;
     font-size: 16px;
     font-weight: bold;
     text-align: center;
-    background-color: $sfondo-beige;
-    margin-top: 30px;
-    color: $testi-marroni;
-    line-height: 50px;
-    border-radius: 30px;
+    // line-height: 50px;
+    border-radius: 5px;
     text-transform: uppercase;
+}
+
+.proprieta-cta-hero {
+    margin-top: 30px;
+    height: 50px;
+    width: 185px;
+    line-height: 50px;
 }
 
 .altezza-logo {
     height: 64px;
+}
+
+p.contatti {
+    color: $colore-chiaro;
+    font-size: 33px;
+    font-weight: bold;
 }
