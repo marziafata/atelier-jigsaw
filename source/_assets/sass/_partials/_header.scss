@@ -1,13 +1,13 @@
 header {
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
+    left: 0;
+    top: 0;
     padding: 40px 100px;
-    transition: 0.6s;
     display: none;
     color: $testi-bianchi;
     font-weight: bold;
+    // background: rgba(0, 0, 0, 0.6);
     img.logo {
         @extend .altezza-logo;
         // width: 30%;
@@ -20,6 +20,7 @@ header {
         // width: 70%;
         // line-height: 64px;
         position: relative;
+        overflow: hidden;
         li {
             position: relative;
             transition: 0.6s;
@@ -32,13 +33,14 @@ header {
             a {
                 position: relative;
                 transition: 0.6s;
+                display: inline-block;
                 &.voce {
                     padding-bottom: 7px;
                     &.voce:hover {
                         border-bottom: 3px solid $colore-chiaro;
                     }
                 }
-            }            
+            }
         }
     }
 }

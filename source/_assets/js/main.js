@@ -2,11 +2,11 @@
 var $ = require( "jquery" );
 
 import flatpickr from "flatpickr";
+import { Italian } from "flatpickr/dist/l10n/it.js"
 
 var dayjs = require('dayjs')
 // //import dayjs from 'dayjs' // ES 2015
 // dayjs().format()
-var maxTop = 0
 
 $(document).ready(function() {
 
@@ -19,6 +19,8 @@ $(document).ready(function() {
     var now = dayjs().add(3, 'day').format();
     flatpickr("#calendario", {
         "minDate": now,
+        "enableTime": true,
+        "dateFormat": "d/m/Y H:i",
         "disable": [
             function(date) {
                 // return true to disable
@@ -28,70 +30,62 @@ $(document).ready(function() {
         ],
         "locale": {
             "firstDayOfWeek": 1 // start week on Monday
-        }
+
+        },
+        "locale": Italian // locale for this instance only
+
     });
 
 
     function isHoliday(data){
+        var festivita = [
+            "01/01",
+            "06/01",
+            "05/04", //pasquetta
+            "25/04",
+            "01/05",
+            "02/06",
+            "15/08",
+            "01/11",
+            "08/12",
+            "25/12",
+            "26/12"
+        ];
+        console.log(festivita);
+        console.log(typeof data);
+        var giorno = aggiungiZero(data.getDate());
+        var mese = aggiungiZero(data.getMonth()+1);
+        var oggi = giorno + "/" + mese;
 
+        if (festivita.includes(oggi)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
-        return false;
-    };
+    function aggiungiZero(n) {
+        if (n < 10) {
+            return "0" + n;
+        } else {
+            return n;
+        }
+    }
 
-    //animazione menu on scroll
+    var posizione = 0;
     $(window).scroll(function() {
-        var scroll = $(window).scrollTop();
-        $('header').toggleClass('nascondi', $(window).scrollTop() > maxTop);
-        maxTop = $(window).scrollTop();
+        var scrolled = $(window).scrollTop();
+        var navHeight = $('header').outerHeight();
+        if (scrolled > posizione && scrolled > navHeight) {
+            $('header').addClass('animate');
+            $('header').removeClass('sfondo');
+        } else if (scrolled < posizione && scrolled > navHeight){
+            $('header').removeClass('animate');
+            $('header').addClass('sfondo');
+        } else if (scrolled < navHeight) {
+            $('header').removeClass('animate');
+            $('header').removeClass('sfondo');
+        }
+        posizione = scrolled;
     });
-    //  // var position = $(window).scrollTop(); //provare a mettere 0
-    //  var positione = 0;
-    //
-    // $(window).scroll(function() {
-    //     // var scroll = $(window).scrollTop();
-    //     // console.log('scroll: ');
-    //     // console.log(scroll);
-    //     if ($(window).scrollTop() > 96) {
-    //         $('header div.navbar').addClass('sfondo');
-    //         $('header div.menu-mobile').addClass('sfondo');
-    //     } else {
-    //         $('header div.navbar').removeClass('sfondo');
-    //         $('header div.menu-mobile').removeClass('sfondo');
-    //     }
-    //
-    //     // $('header div.navbar').toggleClass('nascondi', $(window).scrollTop() > maxTop);
-    //     // maxTop = $(window).scrollTop();
-    //
-    //     // metodo infinity
-    //   var scroll = $(window).scrollTop();
-    //   console.log('scroll: ');
-    //   console.log(scroll);
-    //   console.log('position: ');
-    //   console.log(positione);
-    //   if(scroll > positione) {
-    //     // Scroll down
-    //     $('header div.navbar').addClass('nascondi');
-    //     $('header div.menu-mobile').addClass('nascondi');
-    //     // if($(window).width()>=1024) {
-    //     //   $('header').removeClass('scroll-menu-visible');
-    //     //   $('header div').removeClass('sfondo');
-    //     //   $('header').addClass('scroll-menu-hidden');
-    //     // }
-    //   } else {
-    //     // Scroll up
-    //     console.log('scroll up');
-    //     $('header div.navbar').removeClass('nascondi');
-    //     $('header div.menu-mobile').removeClass('nascondi');
-    //     // if($(window).width()>=1024) {
-    //     //   $('header').addClass('scroll-menu-visible');
-    //     //   $('header div').addClass('sfondo');
-    //     // }
-    //   }
-    //   positione = scroll;
-    //   console.log('position2: ');
-    //   console.log(positione);
-    //   if (positione = 0) {
-    //       // $('header div').removeClass('sfondo');
-    //   }
-    // });
 });

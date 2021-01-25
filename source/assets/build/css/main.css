@@ -22852,6 +22852,7 @@ main {
   margin: 0 auto;
   font-family: "Lora", serif;
   font-size: 20px;
+  position: relative;
 }
 
 .larghezza-sezioni, footer div.wrap, section.list-item div.wrap, section.grid-section div.wrap, section.section-heading div.wrap, section.hero div.jumbo {
@@ -22989,11 +22990,10 @@ section.list-item div.wrap .box h3 {
 
 header {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
+  left: 0;
+  top: 0;
   padding: 40px 100px;
-  transition: 0.6s;
   display: none;
   color: white;
   font-weight: bold;
@@ -23007,6 +23007,7 @@ header img.logo {
 
 header ul {
   position: relative;
+  overflow: hidden;
 }
 
 header ul li {
@@ -23023,6 +23024,7 @@ header ul li.appuntamento {
 header ul li a {
   position: relative;
   transition: 0.6s;
+  display: inline-block;
 }
 
 header ul li a.voce {
@@ -23048,11 +23050,10 @@ div.menu-mobile i.fa-bars {
 
 header {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
+  left: 0;
+  top: 0;
   padding: 40px 100px;
-  transition: 0.6s;
   display: none;
   color: white;
   font-weight: bold;
@@ -23066,6 +23067,7 @@ header img.logo {
 
 header ul {
   position: relative;
+  overflow: hidden;
 }
 
 header ul li {
@@ -23082,6 +23084,7 @@ header ul li.appuntamento {
 header ul li a {
   position: relative;
   transition: 0.6s;
+  display: inline-block;
 }
 
 header ul li a.voce {
@@ -23203,14 +23206,22 @@ footer i.ago {
 
 @media screen and (min-width: 1024px) {
   header {
+    position: absolute;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: 0.6s;
+    overflow: hidden;
   }
 
-  header.nascondi {
-    padding: 5px 100px;
-    background: black;
+  header.animate {
+    transform: translateY(-100%);
+  }
+
+  header.sfondo {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.6);
+    transition: 0.6s;
   }
 
   div.menu-mobile {

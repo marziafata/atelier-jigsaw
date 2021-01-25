@@ -2679,6 +2679,87 @@ if (typeof Object.assign !== "function") {
 
 /***/ }),
 
+/***/ "./node_modules/flatpickr/dist/l10n/it.js":
+/*!************************************************!*\
+  !*** ./node_modules/flatpickr/dist/l10n/it.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function (global, factory) {
+   true ? factory(exports) :
+  undefined;
+}(this, (function (exports) { 'use strict';
+
+  var fp = typeof window !== "undefined" && window.flatpickr !== undefined
+      ? window.flatpickr
+      : {
+          l10ns: {},
+      };
+  var Italian = {
+      weekdays: {
+          shorthand: ["Dom", "Lun", "Mar", "Mer", "Gio", "Ven", "Sab"],
+          longhand: [
+              "Domenica",
+              "Lunedì",
+              "Martedì",
+              "Mercoledì",
+              "Giovedì",
+              "Venerdì",
+              "Sabato",
+          ],
+      },
+      months: {
+          shorthand: [
+              "Gen",
+              "Feb",
+              "Mar",
+              "Apr",
+              "Mag",
+              "Giu",
+              "Lug",
+              "Ago",
+              "Set",
+              "Ott",
+              "Nov",
+              "Dic",
+          ],
+          longhand: [
+              "Gennaio",
+              "Febbraio",
+              "Marzo",
+              "Aprile",
+              "Maggio",
+              "Giugno",
+              "Luglio",
+              "Agosto",
+              "Settembre",
+              "Ottobre",
+              "Novembre",
+              "Dicembre",
+          ],
+      },
+      firstDayOfWeek: 1,
+      ordinal: function () { return "°"; },
+      rangeSeparator: " al ",
+      weekAbbreviation: "Se",
+      scrollTitle: "Scrolla per aumentare",
+      toggleTitle: "Clicca per cambiare",
+      time_24hr: true,
+  };
+  fp.l10ns.it = Italian;
+  var it = fp.l10ns;
+
+  exports.Italian = Italian;
+  exports.default = it;
+
+  Object.defineProperty(exports, '__esModule', { value: true });
+
+})));
+
+
+/***/ }),
+
 /***/ "./node_modules/jquery/dist/jquery.js":
 /*!********************************************!*\
   !*** ./node_modules/jquery/dist/jquery.js ***!
@@ -13573,7 +13654,14 @@ return jQuery;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var flatpickr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! flatpickr */ "./node_modules/flatpickr/dist/esm/index.js");
+/* harmony import */ var flatpickr_dist_l10n_it_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! flatpickr/dist/l10n/it.js */ "./node_modules/flatpickr/dist/l10n/it.js");
+/* harmony import */ var flatpickr_dist_l10n_it_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(flatpickr_dist_l10n_it_js__WEBPACK_IMPORTED_MODULE_1__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
 
 
 
@@ -13581,7 +13669,6 @@ var dayjs = __webpack_require__(/*! dayjs */ "./node_modules/dayjs/dayjs.min.js"
 // dayjs().format()
 
 
-var maxTop = 0;
 $(document).ready(function () {
   $("#logo-footer").click(function () {
     alert('ciao');
@@ -13590,8 +13677,10 @@ $(document).ready(function () {
   console.log('ok'); //calendario
 
   var now = dayjs().add(3, 'day').format();
-  Object(flatpickr__WEBPACK_IMPORTED_MODULE_0__["default"])("#calendario", {
+  Object(flatpickr__WEBPACK_IMPORTED_MODULE_0__["default"])("#calendario", _defineProperty({
     "minDate": now,
+    "enableTime": true,
+    "dateFormat": "d/m/Y H:i",
     "disable": [function (date) {
       // return true to disable
       return date.getDay() === 0 || isHoliday(date);
@@ -13600,68 +13689,50 @@ $(document).ready(function () {
       "firstDayOfWeek": 1 // start week on Monday
 
     }
-  });
+  }, "locale", flatpickr_dist_l10n_it_js__WEBPACK_IMPORTED_MODULE_1__["Italian"]));
 
   function isHoliday(data) {
-    return false;
+    var festivita = ["01/01", "06/01", "05/04", //pasquetta
+    "25/04", "01/05", "02/06", "15/08", "01/11", "08/12", "25/12", "26/12"];
+    console.log(festivita);
+    console.log(_typeof(data));
+    var giorno = aggiungiZero(data.getDate());
+    var mese = aggiungiZero(data.getMonth() + 1);
+    var oggi = giorno + "/" + mese;
+
+    if (festivita.includes(oggi)) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
-  ; //animazione menu on scroll
+  function aggiungiZero(n) {
+    if (n < 10) {
+      return "0" + n;
+    } else {
+      return n;
+    }
+  }
 
+  var posizione = 0;
   $(window).scroll(function () {
-    var scroll = $(window).scrollTop();
-    $('header').toggleClass('nascondi', $(window).scrollTop() > maxTop);
-    maxTop = $(window).scrollTop();
-  }); //  // var position = $(window).scrollTop(); //provare a mettere 0
-  //  var positione = 0;
-  //
-  // $(window).scroll(function() {
-  //     // var scroll = $(window).scrollTop();
-  //     // console.log('scroll: ');
-  //     // console.log(scroll);
-  //     if ($(window).scrollTop() > 96) {
-  //         $('header div.navbar').addClass('sfondo');
-  //         $('header div.menu-mobile').addClass('sfondo');
-  //     } else {
-  //         $('header div.navbar').removeClass('sfondo');
-  //         $('header div.menu-mobile').removeClass('sfondo');
-  //     }
-  //
-  //     // $('header div.navbar').toggleClass('nascondi', $(window).scrollTop() > maxTop);
-  //     // maxTop = $(window).scrollTop();
-  //
-  //     // metodo infinity
-  //   var scroll = $(window).scrollTop();
-  //   console.log('scroll: ');
-  //   console.log(scroll);
-  //   console.log('position: ');
-  //   console.log(positione);
-  //   if(scroll > positione) {
-  //     // Scroll down
-  //     $('header div.navbar').addClass('nascondi');
-  //     $('header div.menu-mobile').addClass('nascondi');
-  //     // if($(window).width()>=1024) {
-  //     //   $('header').removeClass('scroll-menu-visible');
-  //     //   $('header div').removeClass('sfondo');
-  //     //   $('header').addClass('scroll-menu-hidden');
-  //     // }
-  //   } else {
-  //     // Scroll up
-  //     console.log('scroll up');
-  //     $('header div.navbar').removeClass('nascondi');
-  //     $('header div.menu-mobile').removeClass('nascondi');
-  //     // if($(window).width()>=1024) {
-  //     //   $('header').addClass('scroll-menu-visible');
-  //     //   $('header div').addClass('sfondo');
-  //     // }
-  //   }
-  //   positione = scroll;
-  //   console.log('position2: ');
-  //   console.log(positione);
-  //   if (positione = 0) {
-  //       // $('header div').removeClass('sfondo');
-  //   }
-  // });
+    var scrolled = $(window).scrollTop();
+    var navHeight = $('header').outerHeight();
+
+    if (scrolled > posizione && scrolled > navHeight) {
+      $('header').addClass('animate');
+      $('header').removeClass('sfondo');
+    } else if (scrolled < posizione && scrolled > navHeight) {
+      $('header').removeClass('animate');
+      $('header').addClass('sfondo');
+    } else if (scrolled < navHeight) {
+      $('header').removeClass('animate');
+      $('header').removeClass('sfondo');
+    }
+
+    posizione = scrolled;
+  });
 });
 
 /***/ }),
